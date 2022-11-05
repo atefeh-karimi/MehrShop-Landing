@@ -12,8 +12,10 @@ a {
 }
 
 :root {
-  --color-primary: #849d6a;
-  --color-secondary: #86bc42;
+  --color-green: #849d6a;
+  --color-light-green: #86bc42;
+
+  --color-dark-green: #41544a;
   --color-border: #ebebeb;
 }
 @font-face {
@@ -43,8 +45,9 @@ header {
   margin-right: 35px;
   display: flex;
   height: 50px;
-  width: 900px;
+  width: 100%;
   border: 1px solid var(--color-border);
+  margin-left: 50px;
 }
 
 /* ==search-categories== */
@@ -77,14 +80,14 @@ header {
 
 /* ==search-input== */
 .search-input {
-  width: 90%;
+  width: 80%;
   font-family: "Lato", sans-serif;
   font-weight: 400;
   padding-right: 21px;
 }
 
 .search-icon {
-  background-color: var(--color-primary);
+  background-color: var(--color-green);
   width: 10%;
   height: 100%;
 }
@@ -109,7 +112,7 @@ header {
   left: -10px;
   border-radius: 50%;
   position: absolute;
-  background: var(--color-secondary);
+  background: var(--color-light-green);
   color: white;
   font-family: BTrafic;
   font-weight: 700;
@@ -152,13 +155,13 @@ nav::before {
   padding-top: 26px;
 }
 .nav__menu li:not(:first-child):hover a {
-  color: var(--color-secondary);
-  border-top: 4px solid var(--color-secondary);
+  color: var(--color-light-green);
+  border-top: 4px solid var(--color-light-green);
 }
 
 .nav__categories-btn {
-  background-color: var(--color-primary);
-  padding: 16px 20px;
+  background-color: var(--color-green);
+  padding: 16px 12px;
   width: 240px;
 }
 .nav__categories-btn a {
@@ -185,9 +188,10 @@ nav::before {
 /* =====================MAIN==================== */
 main {
   display: grid;
-  grid-template-columns: 20% 80%;
+  grid-template-columns: 20% 78%;
   gap: 30px;
   margin-top: 10px;
+  margin-bottom: 1rem;
 }
 /* =====================ASIDE==================== */
 aside {
@@ -216,4 +220,145 @@ aside {
   color: #86bc42;
   filter: brightness(0) saturate(100%) invert(67%) sepia(45%) saturate(558%)
     hue-rotate(44deg) brightness(93%) contrast(87%);
+}
+
+/* =====================SLIDER==================== */
+.slider {
+  background-image: url("./images/bgSlider.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+}
+
+.slider__info {
+  width: 550px;
+  margin-top: 10%;
+  margin-right: 8%;
+  pad: 15px;
+}
+
+.slider__info-text small {
+  font-family: "Lato";
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 16.8px;
+}
+.slider__info-text h3 {
+  font-family: IranSanse;
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 73.92px;
+  color: var(--color-dark-green);
+  padding-top: 12px;
+}
+.slider__info-text span {
+  font-weight: 400;
+  font-family: IranSanse;
+  font-size: 3rem;
+  line-height: 73.92px;
+  color: var(--color-green);
+}
+
+.slider__info-text p {
+  font-family: "Lato";
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-dark-green);
+  line-height: 24px;
+  padding: 8px 0 8px 30px;
+}
+
+.buyNow-btn {
+  margin-top: 30px;
+  background: var(--color-dark-green);
+  font-family: "Lato";
+  padding: 17px 30px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 15px;
+  color: white;
+  box-shadow: rgb(100 100 111 / 63%) 0px 5px 3px -1px;
+}
+
+.btn i {
+  background-color: white;
+  border-radius: 50%;
+  font-size: 18px;
+  padding: 14px 18px;
+}
+.btn {
+  margin: 0 8px;
+  border-radius: 50%;
+  position: absolute;
+  top: 20%;
+  transform: translateY(-50%);
+}
+.btn-left {
+  left: 0;
+}
+.btn:hover i {
+  background-color: #86bc42;
+  color: white;
+}
+
+/* =====================BANNER==================== */
+.banner-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+}
+.banner {
+  cursor: pointer;
+  height: 250px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.banner-1 {
+  background-image: url("./images/34.png");
+  color: white;
+  font-family: IranSanse;
+  display: flex;
+}
+.banner-info {
+  width: 265px;
+  text-align: right;
+  padding: 50px 40px 40px 0;
+}
+
+.banner-1 small {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+}
+.banner-1 h3 {
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 35px;
+  padding: 8px 0;
+}
+.banner-1 button {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  all: unset;
+}
+
+.banner-1 button::after {
+  content: "";
+  width: 52px;
+  height: 2px;
+  left: 0;
+  position: relative;
+  display: block;
+  top: 8px;
+  background-color: var(--color-border);
+}
+.banner-2 {
+  background-image: url("./images/2.jpg");
+}
+.banner-3 {
+  background-image: url("./images/4.jpg");
 }
