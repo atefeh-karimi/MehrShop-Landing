@@ -45,7 +45,7 @@ header {
   margin-right: 35px;
   display: flex;
   height: 50px;
-  width: 100%;
+  width: 60%;
   border: 1px solid var(--color-border);
   margin-left: 50px;
 }
@@ -129,6 +129,7 @@ nav {
   padding: 14px 0;
   margin-top: 29px;
   position: relative;
+  flex-wrap: wrap;
 }
 nav::before {
   position: absolute;
@@ -142,19 +143,20 @@ nav::before {
 .nav__menu {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 30px;
   font-size: 13px;
   font-family: "Lato", sans-serif;
 }
 
-.nav__menu li:not(:first-child) a {
+.nav__menu li a {
   color: black;
   font-size: 13px;
   font-weight: 700;
   font-family: "Lato", sans-serif;
   padding-top: 26px;
 }
-.nav__menu li:not(:first-child):hover a {
+.nav__menu li:hover a {
   color: var(--color-light-green);
   border-top: 4px solid var(--color-light-green);
 }
@@ -306,59 +308,203 @@ aside {
 /* =====================BANNER==================== */
 .banner-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   gap: 30px;
+  flex-wrap: wrap;
 }
 .banner {
   cursor: pointer;
-  height: 250px;
-  width: 100%;
   background-repeat: no-repeat;
   background-size: contain;
 }
 .banner-1 {
-  background-image: url("./images/34.png");
+  position: relative;
   color: white;
-  font-family: IranSanse;
   display: flex;
 }
 .banner-info {
+  position: absolute;
+  top: 0;
   width: 265px;
   text-align: right;
   padding: 50px 40px 40px 0;
+  font-family: IranSanse;
 }
 
-.banner-1 small {
+.banner-info small {
   font-weight: 400;
   font-size: 12px;
   line-height: 12px;
 }
-.banner-1 h3 {
+.banner-info p {
   font-weight: 600;
   font-size: 25px;
   line-height: 35px;
   padding: 8px 0;
 }
-.banner-1 button {
+.banner-info button {
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
   all: unset;
 }
 
-.banner-1 button::after {
+.banner-info button::after {
   content: "";
   width: 52px;
   height: 2px;
   left: 0;
   position: relative;
   display: block;
-  top: 8px;
+  top: 4px;
   background-color: var(--color-border);
 }
-.banner-2 {
-  background-image: url("./images/2.jpg");
+
+/* =====================CHOOSE==================== */
+.choose-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  gap: 2rem;
+  margin-bottom: 3rem;
 }
-.banner-3 {
-  background-image: url("./images/4.jpg");
+.choose {
+  display: flex;
+  align-items: center;
+}
+
+.choose img {
+  height: 60px;
+  width: 60px;
+}
+.choose-info {
+  padding-right: 25px;
+}
+.choose-info h6 {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 24px;
+}
+.choose-info p {
+  font-size: 13px;
+  padding-top: 5px;
+  font-weight: 400;
+  line-height: 24px;
+
+  color: #4f4f4f;
+}
+
+/* =====================MEDIA QUERIES(TABLET)==================== */
+@media screen and (max-width: 1024px) {
+  .nav__menu {
+    justify-content: center;
+    font-size: 9px;
+    margin-top: 20px;
+  }
+  .nav__menu li:hover a {
+    border-top: unset;
+  }
+  .selected-city {
+    margin-top: 20px;
+  }
+  .profile {
+    display: none;
+  }
+  .category__menu li a {
+    font-size: 10px;
+    padding: 0 5px;
+    gap: 7px;
+    line-height: 40px;
+  }
+  .category__menu li a i {
+    font-size: 8px;
+  }
+
+  main {
+    gap: 15px;
+  }
+
+  .slider__info-text small {
+    font-size: 0.9rem;
+  }
+  .slider__info-text h3 {
+    padding-top: 0;
+    line-height: 50px;
+    font-size: 1.9rem;
+  }
+  .slider__info-text span {
+    font-size: 1.9rem;
+    line-height: 30px;
+  }
+  .slider__info-text p {
+    font-size: 0.8rem;
+  }
+  .buyNow-btn {
+    margin: 30px 0;
+    padding: 11px 18px;
+    font-size: 10px;
+  }
+  .btn i {
+    font-size: 16px;
+    padding: 7px 10px;
+  }
+
+  /* =====================MEDIA QUERIES(PHONE)==================== */
+  @media screen and (max-width: 768px) {
+    header {
+      flex-direction: column;
+    }
+    nav {
+      margin-top: 0;
+    }
+
+    .nav__categories-btn {
+      margin-left: auto;
+    }
+    .nav__menu {
+      order: 3;
+      justify-content: center;
+    }
+    .selected-city {
+      margin-top: 0;
+    }
+
+    main {
+      grid-template-columns: 100%;
+      gap: 0;
+    }
+
+    aside {
+      display: none;
+    }
+
+    .slider__info {
+      width: 350px;
+    }
+
+    .slider__info-text small {
+      font-size: 0.8rem;
+    }
+    .slider__info-text h3 {
+      font-size: 1.5rem;
+    }
+    .slider__info-text span {
+      font-size: 1.5rem;
+    }
+    .slider__info-text p {
+      font-size: 0.7rem;
+    }
+
+    .buyNow-btn {
+      padding: 9px 15px;
+      font-size: 8px;
+    }
+    .search-box {
+      margin-right: 0;
+      margin: 30px 0;
+      margin-left: 0;
+      width: 100%;
+    }
+  }
 }
